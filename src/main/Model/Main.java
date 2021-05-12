@@ -3,10 +3,10 @@ package main.Model;
 import main.Controller.JOP;
 import main.View.Sound;
 
-public class Main {
+public class Main { // Main class that boots the program up.
 
 	@SuppressWarnings("unused")
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception { // Main method to run the program.
 		// TODO Auto-generated method stub
 		Sound sound = new Sound("resources/horror.wav");
 
