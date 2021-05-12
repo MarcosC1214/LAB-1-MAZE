@@ -1,6 +1,6 @@
 package main.Model;
 
-public class Maze {
+public class Maze { // Contains the mazes within boolean arrays and a few helper methods.
 	
 	
 	private boolean [][] _curMaze =
@@ -169,7 +169,7 @@ public class Maze {
 	
 	public int[]getSword() {return _sword; }
 	
-	public void setCurMaze(String mazeType) { 
+	public void setCurMaze(String mazeType) {  // Helper method for maze selection.
 		
 		if(mazeType !=null && mazeType.equalsIgnoreCase("e")) {	
 			_curMaze = _mazeList[0];
@@ -198,7 +198,7 @@ public class Maze {
 			_sword = _swords[2];
         }
   }
-	public boolean isAWall(int x, int y) {
+	public boolean isAWall(int x, int y) { // Checks for a wall.
 		return _curMaze[x][y];
 	}
 }
