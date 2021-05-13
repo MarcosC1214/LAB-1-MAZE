@@ -5,7 +5,7 @@ import main.Model.Minotaur;
 import main.Model.Player;
 import main.Model.Spider;
 
-public class stringMap {
+public class stringMap { // String Map Class for all visible strings within the panel including walls and characters.
 
 
 	private final String _wall = "!!! ";
@@ -29,7 +29,7 @@ public class stringMap {
 		_spid = q;
 	}
 	
-	public String generateMap(int vision) {
+	public String generateMap(int vision) { // Helper method to generate the map within the frame. 
 		 String map = "";
 	     int r1 = _plyr.getRow();
 	     int c1 = _plyr.getCol();
