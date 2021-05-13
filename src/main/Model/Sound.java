@@ -7,7 +7,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 
-public class Sound {
+public class Sound { // Sound Class for sound effects including music.
 
 	public Sound(String filePath) throws InterruptedException {
 		JFrame f = new JFrame();
