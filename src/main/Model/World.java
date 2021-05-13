@@ -3,7 +3,7 @@ package main.Model;
 import main.Controller.JOP;
 import main.View.stringMap;
 
-public class World {
+public class World { // Class to generate stringMap and the current world selected/
 
 	private Player _p;
 	private Minotaur _t;
@@ -25,11 +25,11 @@ public class World {
 		update();
 	}
 
-	public boolean isWall(int x, int y) {
+	public boolean isWall(int x, int y) { // Checks if theres a wall.
 		return this._m.isAWall(x, y);
 	}
 	
-	public void update() {
+	public void update() { // Update/Repaint method for the frame.
 
 		boolean isPlaying = true;
 		while (isPlaying) {
@@ -131,7 +131,7 @@ public class World {
 		
 	}
 	
-	private boolean getPlayerMove(String s) {
+	private boolean getPlayerMove(String s) { // Gets players movements acording to WASD.
 
 		// Moving North
 		if (s.equalsIgnoreCase("W")) {
@@ -178,7 +178,7 @@ public class World {
 		return false;
 	}
 	
-	private void moveMinotaur() {
+	private void moveMinotaur() { // Gets minotaurs movements according to players movements simulating a following effect.
 		int rDist = _p.getRow() - _t.getRow();
 		int cDist = _p.getCol() - _t.getCol();
 		int r = _t.getRow();
@@ -203,7 +203,7 @@ public class World {
 		}
 	}
 	
-	private void moveSpider() {
+	private void moveSpider() { // Similar method to the minotaur but for the spiders themselves.
 		
 			int rDist = _p.getRow() - _q.getRow();
 			int cDist = _p.getCol() - _q.getCol();
@@ -231,21 +231,21 @@ public class World {
 	}
 	
 	
-	public boolean death() {
+	public boolean death() { // Checks for player death.
 		if(_t.getRow() == _p.getRow() && _t.getCol() == _p.getCol() && !_p._hasSword || _q.getRow() == _p.getRow() && _q.getCol() == _p.getCol() && !_p._hasSword) {
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean minDeath() {
+	public boolean minDeath() { // Check for minotaur death.
 			if(_p._hasSword && _t.getRow() == _p.getRow() && _t.getCol() == _p.getCol()) {
 				return true;
 		}
 		return false;
 	}
 	
-	public boolean hasSword() {
+	public boolean hasSword() { // Checks for sword obtained.
 		if(_p.getRow() == _S.getRow() &&
 				_p.getCol() == _S.getCol()) {
 			if(!_p._hasSword) {
@@ -259,7 +259,7 @@ public class World {
 		return false;
 	}
 	
-	public boolean spiDead() {
+	public boolean spiDead() { // Checks if spiders are dead.
 		if(_p.getRow() == _q.getRow() && _p.getCol() == _q.getCol() && !_p._hasSword) {
 			_q._spiDead = true;
 			return true;
@@ -267,7 +267,7 @@ public class World {
 		return false;
 	}
 
-	public boolean victory() {
+	public boolean victory() { // Checks for player victory.
 		if (_p.getRow() == _m.getExit()[0] && _p.getCol() == _m.getExit()[1])
 			{return true;}
 		return false;
